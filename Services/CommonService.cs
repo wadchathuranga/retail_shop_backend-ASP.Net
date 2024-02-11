@@ -315,7 +315,7 @@ namespace retail_management.Services
         }
 
         // product delete implementing
-        //public async Task<Invoice> DeleteProductAsync(int id)
+        //public async Task<Product> DeleteProductAsync(int id)
         //{
         //    return null;
         //}

@@ -22,7 +22,7 @@ namespace retail_management.Services
         Task<List<Product>> GetAllProductsAsync();
         Task<Product> GetProductByIdAsync(int id);
         Task<Product> AddProductAsync(ProductInputDto productInput);
-        Task<Product> DeleteProductAsync(int id);
+        //Task<Product> DeleteProductAsync(int id);
 
 
     }
