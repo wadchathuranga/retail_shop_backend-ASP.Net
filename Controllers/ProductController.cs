@@ -40,5 +40,32 @@ namespace retail_management.Controllers
             return StatusCode(StatusCodes.Status200OK, product);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AddProductAsync(ProductInputDto productInput)
+        {
+            var products = await _commonService.AddProductAsync(productInput);
+
+            if (products == null)
+            {
+                return StatusCode(StatusCodes.Status204NoContent, "Products not added!.");
+            }
+
+            return StatusCode(StatusCodes.Status200OK, products);
+        }
+
+        // Product delete end point
+
+        //[HttpDelete]
+        //public async Task<IActionResult> DeleteProductAsync(int id)
+        //{
+        //    var product = await _commonService.DeleteProductAsync(id);
+        //    if (product == null)
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Error occured");
+        //    }
+
+        //    return StatusCode(StatusCodes.Status200OK, product);
+        //}
+
     }
 }

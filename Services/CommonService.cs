@@ -292,5 +292,33 @@ namespace retail_management.Services
             }
         }
 
+        public async Task<Product> AddProductAsync(ProductInputDto productInput)
+        {
+            try
+            {
+                var product = new Product
+                {
+                    productName = productInput.productName,
+                    description = productInput.description,
+                    price = productInput.price,
+                };
+
+                await _db.Products.AddAsync(product);
+                await _db.SaveChangesAsync();
+
+                return product;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        // product delete implementing
+        //public async Task<Invoice> DeleteProductAsync(int id)
+        //{
+        //    return null;
+        //}
+
     }
 }
